@@ -6,7 +6,7 @@
 # #list 
 
 # name = ['rahul','gourav','sandeep','ankit']
-# print(name[0])
+# print(name[10])
 # name[0]= "rahul patel"
 # print(name[0])
 
@@ -128,34 +128,34 @@
 # #OOP object oriyented prigramin
 
 
-class Employee:
-    __name = None
-    __id = 0
-    __salary = 0
+# class Employee:
+#     __name = None
+#     __id = 0
+#     __salary = 0
     
     
-    def __init__(self,name,id,salary,):
-        self.__name = name
-        self.__id = id
-        self.__salary = salary
+#     def __init__(self,name,id,salary,):
+#         self.__name = name
+#         self.__id = id
+#         self.__salary = salary
         
         
         
-    def set_name(self, name):
-        self.__name = name
-    def get_name(self):
-        return self.__name
+#     def set_name(self, name):
+#         self.__name = name
+#     def get_name(self):
+#         return self.__name
         
         
         
-# gourav = Employee() // whitout init
-# gourav.name = "gourav patel"     
-# print(gourav.name)
-# gourav.set_name("gourav")
-# print(gourav.get_name())
+# # gourav = Employee() // whitout init
+# # gourav.name = "gourav patel"     
+# # print(gourav.name)
+# # gourav.set_name("gourav")
+# # print(gourav.get_name())
 
 
-raul = Employee("rahul patel",18,50000)
-print(raul.get_name())
+# raul = Employee("rahul patel",18,50000)
+# print(raul.get_name())
 
     
