@@ -1,0 +1,2 @@
+gourav\script\activate
+pip freeze > req.txt
