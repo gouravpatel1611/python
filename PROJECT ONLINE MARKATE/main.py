@@ -74,17 +74,15 @@ def bill_print():
         total_rs += user_itm[j][2]*user_itm[j][1]
     print("\n")
     print(" {:10} {:12} {:5}".format("Total Prize :",total_rs,"/-"))
-    print(" {:10} {:9} {:5}".format("Online tex 2.5% :",total_rs*2.5/100,"/-"))
-    print(" {:10} {:15} {:5}".format("Final Prize :",total_rs+total_rs*2.5/100,"/-"))
+    print(" {:10} {:9} {:5}".format("Online tex 0.5% :",total_rs*0.5/100,"/-"))
+    print(" {:10} {:15} {:5}".format("Final Prize :",total_rs+total_rs*0.5/100,"/-"))
     print(" ")
     print("\t ~~ Thanks For Comming Our Site ~~")
-
-
 # #~~~~~~~~~~~~~~~~~~~~~~~~~~~End~~~~~~~~~~~~~~~~~~
 
     
 def main():
-    # user_entry()
+    user_entry()
     grocery_list()
     add_itm()
     
