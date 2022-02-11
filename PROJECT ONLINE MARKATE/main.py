@@ -1,16 +1,24 @@
+import os
+import json
 #--------------Global variable-------------------
 name =""
 address = ""
 contect_no = ""
 user_itm = {}
-a = {
-    1:['milk',"1 L",250],
-    2:['powder',"1 Kg",350],
-    3:['choklate',"1 piece",300]
-    }
+a = {}
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~End~~~~~~~~~~~~~~~~~~
 
-# # ---------------User detailse ----------------
+
+#--------------list making variable-------------------
+def list_maker():
+    global a
+    data = open('data.json')
+    a = json.load(data)
+    data.close()
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~End~~~~~~~~~~~~~~~~~~
+
+
+ # ---------------User detailse ----------------
 def user_entry():
     global name, address, contect_no
     print(" \t ~~ Welcome To Online Markate ~~")
@@ -21,14 +29,20 @@ def user_entry():
 # #~~~~~~~~~~~~~~~~~~~~~~~~~~~End~~~~~~~~~~~~~~~~~~
 
 #--------------------- Print Item List ----------------
-def grocery_list():
+def grocery_list(value):
     print("\n")
     print(" \t ~~ Grocery List ~~")
     t_num = 1
-    print("{:3} {:13} {:15} {:10}".format("No.","NAME","QTY","PRIZE"))
-    for i in a:
-        print("{:3} {:13} {:9} {:10}".format(t_num,a[i][0],a[i][1],a[i][2]))
-        t_num += 1
+    if value == 1:
+        print("{:3} {:13} {:15} {:10}".format("No.","NAME","QTY","PRIZE"))
+        for i in a:
+            print("{:3} {:13} {:9} {:10}".format(t_num,a[i][0],a[i][1],a[i][2]))
+            t_num += 1
+    else:
+        print("{:3} {:13} {:15} {:10}".format("No.","NAME","QTY","PRIZE"))
+        for i in a:
+            print("{:3} {:13} {:9} {:10}".format(t_num,a[i][0],a[i][1],a[i][2]))
+            t_num += 1
 # #~~~~~~~~~~~~~~~~~~~~~~~~~~~End~~~~~~~~~~~~~~~~~~
 
 
@@ -39,9 +53,9 @@ def add_itm():
         k += 1
         num = int(input("Enter your product no. :- "))
         if num <= len(a):
-            qty = int(input(f"Enter Qty of {a[num][0]}  :-  "))
+            qty = int(input(f"Enter Qty of {a[str(num)][0]}  :-  "))
         
-            user_itm[k]= [a[num][0],qty,a[num][2]]
+            user_itm[k]= [a[str(num)][0],qty,a[str(num)][2]]
             temp = input("A for Add more item else any :- ")
             if temp == 'A' or temp == 'a':
                 pass
@@ -80,11 +94,20 @@ def bill_print():
     print("\t ~~ Thanks For Comming Our Site ~~")
 # #~~~~~~~~~~~~~~~~~~~~~~~~~~~End~~~~~~~~~~~~~~~~~~
 
-    
+#--------------------- admin input ------------------
+def admin():
+    grocery_list(1)
+    print("admin")
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~End~~~~~~~~~~~~~~~~~~
+
 def main():
     user_entry()
-    grocery_list()
-    add_itm()
+    if address == "@admin" and contect_no == "6260702385":
+        admin()
+    else:
+        list_maker()
+        grocery_list(0)
+        add_itm()
     
     
     
