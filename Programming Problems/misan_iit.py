@@ -9,6 +9,7 @@ for i in range(1,user_input):
     
     list1.append(list2)
     
+    
 len = 0
 for i in list1:
     len += 1
