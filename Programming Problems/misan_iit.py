@@ -13,6 +13,7 @@ for i in range(1,user_input):
 len = 0
 for i in list1:
     len += 1
+    i = sorted(i)
     print(len,i)
     temp = i
     t_num = -2
@@ -21,6 +22,7 @@ for i in list1:
             temp[-1] = temp[-1] -1
             temp[t_num] = temp[t_num] +1
             len +=1
+            temp = sorted(temp)
             print(len,temp)
         else:
             if temp[t_num] == temp[0]:
