@@ -40,7 +40,10 @@ int main()
             }
             printf("%d", arr[t]);
             printf("\n");
+            if (arr[t] - arr[t - t2] ==1 || arr[t] - arr[t - t2] ==0)
+            {
             t2++;
+            }
         }
         temp++;
     }
