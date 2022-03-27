@@ -10,7 +10,6 @@ class TestApp(App):
                      size_hint = (None,None),
                      width = 500,
                      height = 200,
-                     pos_hint={"left":0.1,"top":1},
 
                     
                     
